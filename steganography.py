@@ -21,7 +21,7 @@ def decode_image(path_to_png):
         decoded image from encoded png
 
     Raises:
-        typeError: Not a png file      
+        FileNotFoundError: File not found
     '''
     encoded_image = Image.open(path_to_png)
     decoded_img = encoded_image.copy()
@@ -40,7 +40,16 @@ def decode_image(path_to_png):
 
 def encode_image(path_to_png, text_to_write):
     """
-    TODO: Add docstring and complete implementation.
+    Args:
+        path_to_png (str): relative or absolute path to png
+        text_to_write (str): text to encode with
+    
+    Returns: 
+        encodes image on given file
+
+    Raises:
+        FileNotFoundError: File not found
+    
     """
     raw_image = Image.open(path_to_png)
     msg_image = Image.new("RGB",raw_image.size,(0,0,0))
