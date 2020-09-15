@@ -51,7 +51,7 @@ def encode_image(path_to_png, text_to_write):
         FileNotFoundError: File not found
     
     """
-    raw_image = Image.open(path_to_png)
+    raw_image = Image.open(path_to_png).convert("RGB")
     msg_image = Image.new("RGB",raw_image.size,(0,0,0))
 
     msg = ImageDraw.Draw(msg_image)
